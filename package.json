@@ -11,10 +11,12 @@
     "browserify": "^16.2.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "ejs": "~2.5.7",
-    "express": "~4.16.0",
+    "dotenv": "^17.3.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.1",
-    "pdfkit": "^0.8.3"
+    "pdfkit": "^0.17.2"
   }
 }

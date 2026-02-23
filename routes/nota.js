@@ -26,10 +26,14 @@ router.post('/', (req, res) => {
     doc.fontSize(10);
 
     // Header
-    doc.text(`Río Gallegos, ${day} de ${month} de ${year}`, 100, 50, { align: "right" });
-    doc.text("Al Instituto de Educación Austro", 50, 70, { align: "left" });
+    const ciudad = process.env.INSTITUCION_CIUDAD || "Río Gallegos";
+    const institucion = process.env.INSTITUCION_NOMBRE || "Instituto de Educación Austro";
+    const rectora = process.env.INSTITUCION_RECTORA || "Prof. Ana Barria Zamorano";
+
+    doc.text(`${ciudad}, ${day} de ${month} de ${year}`, 100, 50, { align: "right" });
+    doc.text(`Al ${institucion}`, 50, 70, { align: "left" });
     doc.text("Sra Rectora", 50, 85, { align: "left" });
-    doc.text("Prof. Ana Barria Zamorano", 50, 100, { align: "left" });
+    doc.text(rectora, 50, 100, { align: "left" });
     doc.text("S     /       D", 50, 115, { align: "left" });
 
     // Student Info

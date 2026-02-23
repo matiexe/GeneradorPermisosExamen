@@ -1,124 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Nota de inscripción</title>
+    <title>Nota de inscripción | <%= institucion %>
+    </title>
 </head>
+
 <body>
     <header>
-      <div class="container-fluid bg-dark">
-        <div class="container">
-            <nav class="navbar navbar-dark bg-dark">
-                <a class="navbar-brand" href="/">
-                    <img src="images/blanco.png" height="40" alt="logo">
-                </a>
-                <span class="navbar-text">Solicitud de mesa de examen <span class="badge badge-info">v0.1</span></span>
-            </nav>
-      </div>
-    </div>
+        <div class="container-fluid bg-dark">
+            <div class="container">
+                <nav class="navbar navbar-dark bg-dark">
+                    <a class="navbar-brand" href="/">
+                        <img src="images/blanco.png" height="40" alt="logo">
+                    </a>
+                    <span class="navbar-text">Solicitud de mesa de examen <span
+                            class="badge badge-info">v0.1</span></span>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <div class="container" style="padding-top:20px">
-      <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
-              <div class="card text-white bg-info mb-3">
-                  <div class="card-header">Instrucciones</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Solicitud de notas de examen</h5>
-                    <h6 class="card-subtitle mb-2">Para alumnos egresados</h6>
-                    <p class="card-text">Rellena los campos con tus datos personales y las materias a rendir para generar tu nota formal.</p>
-                  </div>
-              </div>
-              <div class="card">
-                <div class="card-header">Información Importante</div>
-                      <ul class="list-group list-group-flush">
-                          <li class="list-group-item">Las mesas se solicitan de Abril a Noviembre.</li>
-                          <li class="list-group-item">Las notas deben ser presentadas antes del 10 de cada mes.</li>
-                          <li class="list-group-item">Se informará al alumno cuando la mesa esté conformada.</li>
-                          <li class="list-group-item text-danger">Si el alumno no se presenta a la mesa solicitada, no podrá rendir el mes siguiente.</li>
-                      </ul>
-              </div>
-          </div>
-
-        <div class="col-lg-8 col-md-12">
-            <form action="/nota" method="post">
-              <div class="card mb-4">
-                  <h4 class="card-header">Datos Personales</h4>
-                  <div class="card-body">
-                      <div class="row mb-3">
-                          <div class="col-md-6">
-                              <label for="fNombre">Nombre</label>
-                              <input type="text" class="form-control" id="fNombre" name="nombre" placeholder="Ingrese su nombre" required>
-                          </div>
-                          <div class="col-md-6">
-                              <label for="fApel">Apellido</label>  
-                              <input type="text" class="form-control" id="fApel" name="apellido" placeholder="Ingrese su Apellido" required>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-4">
-                              <label for="dni">N° DNI</label>
-                              <input type="number" class="form-control" id="dni" name="dni" placeholder="Ingrese su DNI" required>
-                          </div>
-                          <div class="col-md-4">
-                              <label for="egreso">Año de egreso</label>
-                              <select name="egreso" class="form-control" id="egreso">
-                                      <option value="" selected disabled>Seleccione</option>
-                                      <% for(let year = (new Date().getFullYear()); year >= 2010; year--) { %>
-                                        <option value="<%= year %>"><%= year %></option>
-                                      <% } %>
-                              </select>
-                          </div>
-                          <div class="col-md-4">
-                            <label for="telefono">Teléfono</label>
-                            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Ingrese teléfono">
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="card mb-4">
-                <div class="card-header"><h4>Materias a rendir</h4></div>
-                <div class="card-body">
-                    <div class="form-group mb-3">
-                        <label for="materia1">Materia 1</label>
-                        <input type="text" id="materia1" class="form-control" name="materia1" placeholder="Ej: Matemática I">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="materia2">Materia 2</label>
-                        <input type="text" id="materia2" class="form-control" name="materia2" placeholder="Ej: Física I">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="materia3">Materia 3</label>
-                        <input type="text" id="materia3" class="form-control" name="materia3" placeholder="Ej: Química I">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-header">Instrucciones</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Solicitud de notas de examen</h5>
+                        <h6 class="card-subtitle mb-2">Para alumnos egresados</h6>
+                        <p class="card-text">Rellena los campos con tus datos personales y las materias a rendir para
+                            generar tu nota formal.</p>
                     </div>
                 </div>
-              </div>
+                <div class="card">
+                    <div class="card-header">Información Importante</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Las mesas se solicitan de Abril a Noviembre.</li>
+                        <li class="list-group-item">Las notas deben ser presentadas antes del 10 de cada mes.</li>
+                        <li class="list-group-item">Se informará al alumno cuando la mesa esté conformada.</li>
+                        <li class="list-group-item text-danger">Si el alumno no se presenta a la mesa solicitada, no
+                            podrá rendir el mes siguiente.</li>
+                    </ul>
+                </div>
+            </div>
 
-              <div class="row mb-5">
-                  <div class="col">
-                      <button type="submit" class="btn btn-primary btn-lg btn-block">Generar Nota PDF</button>
-                  </div>
-              </div>
-            </form>
+            <div class="col-lg-8 col-md-12">
+                <form action="/nota" method="post">
+                    <div class="card mb-4">
+                        <h4 class="card-header">Datos Personales</h4>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="fNombre">Nombre</label>
+                                    <input type="text" class="form-control" id="fNombre" name="nombre"
+                                        placeholder="Ingrese su nombre" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="fApel">Apellido</label>
+                                    <input type="text" class="form-control" id="fApel" name="apellido"
+                                        placeholder="Ingrese su Apellido" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="dni">N° DNI</label>
+                                    <input type="number" class="form-control" id="dni" name="dni"
+                                        placeholder="Ingrese su DNI" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="egreso">Año de egreso</label>
+                                    <select name="egreso" class="form-control" id="egreso">
+                                        <option value="" selected disabled>Seleccione</option>
+                                        <% for(let year=(new Date().getFullYear()); year>= 2010; year--) { %>
+                                            <option value="<%= year %>">
+                                                <%= year %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="number" class="form-control" id="telefono" name="telefono"
+                                        placeholder="Ingrese teléfono">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Materias a rendir</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group mb-3">
+                                <label for="materia1">Materia 1</label>
+                                <input type="text" id="materia1" class="form-control" name="materia1"
+                                    placeholder="Ej: Matemática I">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="materia2">Materia 2</label>
+                                <input type="text" id="materia2" class="form-control" name="materia2"
+                                    placeholder="Ej: Física I">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="materia3">Materia 3</label>
+                                <input type="text" id="materia3" class="form-control" name="materia3"
+                                    placeholder="Ej: Química I">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-5">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Generar Nota PDF</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
 
     <footer class="footer mt-auto py-3 bg-light border-top">
-      <div class="container text-center">
-        <span class="text-muted">© <%= new Date().getFullYear() %> Instituto Austro | 
-            <a href="https://github.com" target="_blank">maex.dev</a>
-        </span>
-      </div>
+        <div class="container text-center">
+            <span class="text-muted">© <%= new Date().getFullYear() %>
+                    <%= institucion %> |
+                        <a href="https://github.com" target="_blank">maex.dev</a>
+            </span>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
