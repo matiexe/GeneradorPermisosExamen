@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "build": "npm run build:css",
     "build:css": "npx tailwindcss -i ./public/stylesheets/tailwind-input.css -o ./public/stylesheets/style.css",
     "watch:css": "npx tailwindcss -i ./public/stylesheets/tailwind-input.css -o ./public/stylesheets/style.css --watch"
   },

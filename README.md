@@ -14,8 +14,8 @@ Esta aplicación web permite a los alumnos egresados del **Instituto de Educaci�
 - **Backend:** Node.js & Express.js
 - **Motor de Plantillas:** EJS (Embedded JavaScript)
 - **Generación de Documentos:** [PDFKit](http://pdfkit.org/)
-- **Estilos:** Bootstrap 4 & CSS3 personalizado.
-- **Despliegue:** Preparado para Firebase Hosting / App Engine.
+- **Estilos:** Tailwind CSS v4 (Design System personalizado).
+- **Despliegue:** Preparado para [Vercel](https://vercel.com) (Serverless Functions) y Firebase Hosting.
 
 ## 📋 Estructura del Proyecto
 
