@@ -33,11 +33,12 @@ Esta aplicación web permite a los alumnos egresados del **Instituto de Educaci�
 
 ## 📈 Puntos de Mejora Implementados
 
-En el análisis reciente, se realizaron las siguientes optimizaciones:
-1. **Corrección de Errores HTML:** Se eliminaron IDs duplicados en el formulario y se corrigieron los valores del selector de año de egreso.
-2. **Refactorización de Lógica:** Se simplificó el manejo de fechas en el backend y se activaron validaciones básicas para evitar PDF vacíos.
-3. **Nombres de Archivo Dinámicos:** Ahora los PDFs se descargan con el nombre del alumno (ej: `Solicitud_Mesa_Apellido_Nombre.pdf`).
-4. **Mejora Visual:** Se ajustó el layout para ser más moderno y limpio, y se corrigieron enlaces rotos en el pie de página.
+En esta versión (rama `feature/mejoras-tecnicas`), se realizaron las siguientes optimizaciones:
+1. **Seguridad Robusta:** Implementación de `helmet.js` para proteger la aplicación contra vulnerabilidades comunes de la web.
+2. **Configuración por Entorno:** Migración de datos institucionales a variables de entorno (`.env`), permitiendo cambiar el nombre del instituto o la rectora sin tocar el código.
+3. **Dependencias Modernas:** Actualización a las últimas versiones estables de Express, PDFKit y EJS.
+4. **Diseño Premium:** Rediseño visual completo utilizando la fuente *Outfit*, gradientes modernos, sombras suaves y micro-animaciones para una experiencia de usuario superior.
+5. **Corrección de Errores HTML:** Eliminación de IDs duplicados y corrección de lógica en los selectores del formulario.
 
 ---
 *Desarrollado para el Instituto de Educación Austro.*
