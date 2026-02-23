@@ -1,83 +1,147 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-full">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Nota de inscripción | <%= institucion %>
+    <title>Nota de Inscripción | <%= institucion %>
     </title>
 </head>
 
-<body>
-    <header>
-        <div class="container-fluid bg-dark">
-            <div class="container">
-                <nav class="navbar navbar-dark bg-dark">
-                    <a class="navbar-brand" href="/">
-                        <img src="images/blanco.png" height="40" alt="logo">
+<body class="flex flex-col h-full bg-slate-50 font-outfit text-slate-900">
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex items-center space-x-3 group">
+                        <img src="images/blanco.png" class="h-10 w-auto transform transition group-hover:scale-105"
+                            alt="logo">
+                        <div class="hidden md:block h-8 w-px bg-slate-700 mx-4"></div>
+                        <span class="text-white font-semibold text-lg tracking-tight hidden md:inline">Solicitud de Mesa
+                            de Examen</span>
                     </a>
-                    <span class="navbar-text">Solicitud de mesa de examen <span
-                            class="badge badge-info">v0.1</span></span>
-                </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span
+                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-500/10 text-primary-400 ring-1 ring-inset ring-primary-500/20">
+                        v1.0.0
+                    </span>
+                </div>
             </div>
         </div>
     </header>
 
-    <div class="container" style="padding-top:20px">
-        <div class="row">
-            <div class="col-lg-4 col-md-12 mb-4">
-                <div class="card text-white bg-info mb-3">
-                    <div class="card-header">Instrucciones</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Solicitud de notas de examen</h5>
-                        <h6 class="card-subtitle mb-2">Para alumnos egresados</h6>
-                        <p class="card-text">Rellena los campos con tus datos personales y las materias a rendir para
-                            generar tu nota formal.</p>
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Sidebar Info -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <!-- Instructions Card -->
+                    <div class="card overflow-hidden">
+                        <div class="bg-primary-600 px-6 py-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Instrucciones
+                            </h3>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-900 mb-1">Inscripción a Examen</h4>
+                            <p class="text-slate-500 text-sm font-medium mb-4">Exclusivo para alumnos egresados</p>
+                            <p class="text-slate-600 leading-relaxed">
+                                Completa el formulario con tus datos reales. Al finalizar, obtendrás un documento PDF
+                                listo para imprimir y presentar en secretaría.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">Información Importante</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Las mesas se solicitan de Abril a Noviembre.</li>
-                        <li class="list-group-item">Las notas deben ser presentadas antes del 10 de cada mes.</li>
-                        <li class="list-group-item">Se informará al alumno cuando la mesa esté conformada.</li>
-                        <li class="list-group-item text-danger">Si el alumno no se presenta a la mesa solicitada, no
-                            podrá rendir el mes siguiente.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="col-lg-8 col-md-12">
-                <form action="/nota" method="post">
-                    <div class="card mb-4">
-                        <h4 class="card-header">Datos Personales</h4>
-                        <div class="card-body">
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="fNombre">Nombre</label>
-                                    <input type="text" class="form-control" id="fNombre" name="nombre"
-                                        placeholder="Ingrese su nombre" required>
+                    <!-- Important Info Card -->
+                    <div class="card p-6">
+                        <h3
+                            class="text-lg font-bold text-slate-900 mb-6 flex items-center border-b border-slate-100 pb-4">
+                            <svg class="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Información Importante
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-5 w-5 text-primary-600 mr-3 mt-0.5">•</span>
+                                <span class="text-slate-600 text-sm">Las mesas se solicitan de <strong>Abril a
+                                        Noviembre</strong>.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-5 w-5 text-primary-600 mr-3 mt-0.5">•</span>
+                                <span class="text-slate-600 text-sm">Presentar la nota antes del <strong>día 10</strong>
+                                    de cada mes.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-5 w-5 text-primary-600 mr-3 mt-0.5">•</span>
+                                <span class="text-slate-600 text-sm">La fecha será confirmada cuando la mesa esté
+                                    conformada.</span>
+                            </li>
+                            <li class="flex items-start p-3 bg-red-50 rounded-xl border border-red-100">
+                                <svg class="w-5 h-5 text-red-500 mr-3 flex-shrink-0 mt-0.5" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <span class="text-red-700 text-[13px] leading-tight font-medium">Si no te presentas a la
+                                    mesa solicitada, se suspende la solicitud por el mes siguiente.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Form Section -->
+                <div class="lg:col-span-8">
+                    <form action="/nota" method="post" class="space-y-8">
+                        <!-- Personal Info Card -->
+                        <div class="card p-8">
+                            <div class="mb-8 border-b border-slate-100 pb-6">
+                                <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Datos Personales</h3>
+                                <p class="text-slate-500 text-sm mt-1">Completa los campos tal como aparecen en tu DNI.
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                                <div class="space-y-2">
+                                    <label for="fNombre"
+                                        class="text-sm font-semibold text-slate-700 tracking-wide">Nombre</label>
+                                    <input type="text" id="fNombre" name="nombre"
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+                                        placeholder="Ej: Juan Pablo" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="fApel">Apellido</label>
-                                    <input type="text" class="form-control" id="fApel" name="apellido"
-                                        placeholder="Ingrese su Apellido" required>
+                                <div class="space-y-2">
+                                    <label for="fApel"
+                                        class="text-sm font-semibold text-slate-700 tracking-wide">Apellido</label>
+                                    <input type="text" id="fApel" name="apellido"
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+                                        placeholder="Ej: Pérez" required>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="dni">N° DNI</label>
-                                    <input type="number" class="form-control" id="dni" name="dni"
-                                        placeholder="Ingrese su DNI" required>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div class="space-y-2 md:col-span-1">
+                                    <label for="dni"
+                                        class="text-sm font-semibold text-slate-700 tracking-wide">DNI</label>
+                                    <input type="number" id="dni" name="dni"
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+                                        placeholder="Sin puntos" required>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="egreso">Año de egreso</label>
-                                    <select name="egreso" class="form-control" id="egreso">
-                                        <option value="" selected disabled>Seleccione</option>
+                                <div class="space-y-2 md:col-span-1">
+                                    <label for="egreso" class="text-sm font-semibold text-slate-700 tracking-wide">Año
+                                        de Egreso</label>
+                                    <select name="egreso" id="egreso"
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 cursor-pointer appearance-none">
+                                        <option value="" selected disabled>Seleccione año</option>
                                         <% for(let year=(new Date().getFullYear()); year>= 2010; year--) { %>
                                             <option value="<%= year %>">
                                                 <%= year %>
@@ -85,60 +149,87 @@
                                             <% } %>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="telefono">Teléfono</label>
-                                    <input type="number" class="form-control" id="telefono" name="telefono"
-                                        placeholder="Ingrese teléfono">
+                                <div class="space-y-2 md:col-span-1">
+                                    <label for="telefono"
+                                        class="text-sm font-semibold text-slate-700 tracking-wide">Teléfono</label>
+                                    <input type="number" id="telefono" name="telefono"
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+                                        placeholder="Cód. área sin 0 y sin 15">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <h4>Materias a rendir</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group mb-3">
-                                <label for="materia1">Materia 1</label>
-                                <input type="text" id="materia1" class="form-control" name="materia1"
-                                    placeholder="Ej: Matemática I">
+                        <!-- Subjects Card -->
+                        <div class="card p-8">
+                            <div class="mb-8 border-b border-slate-100 pb-6">
+                                <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Materias a rendir</h3>
+                                <p class="text-slate-500 text-sm mt-1">Puedes rendir hasta 3 materias simultáneamente.
+                                </p>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="materia2">Materia 2</label>
-                                <input type="text" id="materia2" class="form-control" name="materia2"
-                                    placeholder="Ej: Física I">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="materia3">Materia 3</label>
-                                <input type="text" id="materia3" class="form-control" name="materia3"
-                                    placeholder="Ej: Química I">
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row mb-5">
-                        <div class="col">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Generar Nota PDF</button>
+                            <div class="space-y-6">
+                                <div class="relative flex items-center group">
+                                    <span
+                                        class="absolute left-5 text-slate-400 font-bold group-focus-within:text-primary-600 transition-colors">1.</span>
+                                    <input type="text" name="materia1"
+                                        class="w-full pl-12 pr-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+                                        placeholder="Nombre completo de la materia">
+                                </div>
+                                <div class="relative flex items-center group text-slate-400 font-bold">
+                                    <span
+                                        class="absolute left-5 group-focus-within:text-primary-600 transition-colors">2.</span>
+                                    <input type="text" name="materia2"
+                                        class="w-full pl-12 pr-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+                                        placeholder="Opcional">
+                                </div>
+                                <div class="relative flex items-center group text-slate-400 font-bold">
+                                    <span
+                                        class="absolute left-5 group-focus-within:text-primary-600 transition-colors">3.</span>
+                                    <input type="text" name="materia3"
+                                        class="w-full pl-12 pr-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+                                        placeholder="Opcional">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </form>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
+                            <p class="text-slate-500 text-sm flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                Proceso de generación seguro
+                            </p>
+                            <button type="submit" class="btn-primary w-full sm:w-auto px-12 py-4 text-lg">
+                                Generar Nota PDF
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer class="footer mt-auto py-3 bg-light border-top">
-        <div class="container text-center">
-            <span class="text-muted">© <%= new Date().getFullYear() %>
-                    <%= institucion %> |
-                        <a href="https://github.com" target="_blank">maex.dev</a>
-            </span>
+    <footer class="bg-white border-t border-slate-200 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
+                <div class="text-slate-500 text-sm font-medium">
+                    © <%= new Date().getFullYear() %> <span class="text-slate-900 font-bold italic tracking-tight">
+                            <%= institucion %>
+                        </span>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="https://github.com" target="_blank"
+                        class="text-slate-500 hover:text-primary-600 transition-colors flex items-center group">
+                        <span class="font-bold tracking-widest text-xs uppercase mr-2 opacity-50">developed by</span>
+                        <span
+                            class="font-bold text-slate-900 group-hover:text-primary-600 transition-colors">maex.dev</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
